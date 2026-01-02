@@ -1,0 +1,71 @@
+.dept-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.dept-slider {
+  height: 300vh;
+  transition: transform 1.2s ease-in-out;
+}
+
+.dept-slide {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.dept-overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.85)
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  animation: fadeUp 1.2s ease;
+}
+
+.dept-overlay h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.dept-overlay p {
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .dept-overlay {
+    padding: 40px 25px;
+  }
+
+  .dept-overlay h1 {
+    font-size: 30px;
+  }
+
+  .dept-overlay p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,219 @@
+/* ================================
+   GLOBAL NAVBAR
+================================ */
+.navbar {
+  background: linear-gradient(90deg, #051f33, #084367);
+  padding: 14px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ================================
+   LOGO
+================================ */
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 72px;              /* ⬅️ Increased size (Desktop) */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect */
+.logo img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 6px 14px rgba(255, 211, 105, 0.8));
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .logo img {
+    height: 64px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 56px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo img {
+    height: 48px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .logo img {
+    height: 60px;
+  }
+}
+
+
+
+/* ================================
+   NAV LINKS (DESKTOP)
+================================ */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links li a {
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffd369;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #ffd369;
+}
+
+/* ================================
+   CONTACT BUTTON
+================================ */
+.contact-btn {
+  background: #ffd369;
+  color: #0a2a43 !important;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #ffb703;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   HAMBURGER MENU
+================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background: #ffffff;
+  height: 3px;
+  width: 26px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================================
+   TABLET RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 14px 24px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #051f33, #084367);
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 0;
+    display: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+}
+
+/* ================================
+   MOBILE SLIDE ANIMATION
+================================ */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

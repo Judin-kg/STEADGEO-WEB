@@ -1,0 +1,184 @@
+/* ================================
+   HOME SECTION
+================================ */
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* ================================
+   CAROUSEL
+================================ */
+.carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  transform: scale(1.05);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================================
+   DARK OVERLAY
+================================ */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(3, 18, 32, 0.85),
+    rgba(3, 18, 32, 0.6)
+  );
+  z-index: 1;
+}
+
+/* ================================
+   CONTENT OVERLAY
+================================ */
+.home-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+  color: #ffffff;
+  max-width: 900px;
+}
+
+/* ================================
+   TYPING HEADING
+================================ */
+.typing {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 56px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Cursor Animation */
+.cursor {
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* ================================
+   SUB TEXT
+================================ */
+.home-overlay p {
+  font-size: 18px;
+  color: #d4eaff;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* ================================
+   BUTTON
+================================ */
+.home-overlay button {
+  width: fit-content;
+  padding: 14px 34px;
+  background: #ffd369;
+  color: #0a2a43;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-overlay button:hover {
+  background: #ffb703;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 211, 105, 0.5);
+}
+
+/* ================================
+   TABLET RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .typing {
+    font-size: 44px;
+    letter-spacing: 2px;
+  }
+
+  .home-overlay {
+    padding: 0 6%;
+  }
+
+  .home-overlay p {
+    font-size: 16px;
+  }
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .home {
+    height: 90vh;
+  }
+
+  .home-overlay {
+    padding: 0 6%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .typing {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+
+  .home-overlay p {
+    font-size: 14px;
+  }
+
+  .home-overlay button {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   SMALL MOBILE
+================================ */
+@media (max-width: 480px) {
+  .typing {
+    font-size: 26px;
+  }
+
+  .home-overlay p {
+    font-size: 13px;
+  }
+}
