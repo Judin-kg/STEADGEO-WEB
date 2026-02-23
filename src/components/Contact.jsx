@@ -77,7 +77,7 @@ ${message}
   };
 
   return (
-    <section className="contact-section">
+    <section className="contact-section" id="contact">
       <div className="contact-wrapper">
 
         {/* LEFT IMAGE */}

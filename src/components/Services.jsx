@@ -168,7 +168,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="services-page">
+    <div className="services-page" id="services">
       <h1 className="services-heading">Our Services</h1>
          {/* <p className="highlight">
             Engineering Excellence • Heavy Machinery • Precision Work

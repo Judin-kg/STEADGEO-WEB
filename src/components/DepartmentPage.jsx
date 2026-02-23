@@ -112,7 +112,7 @@ export default function DepartmentPage() {
   }, []);
 
   return (
-    <div className="dept-wrapper">
+    <div className="dept-wrapper" id="departments">
       <div
         className="dept-slider"
         style={{

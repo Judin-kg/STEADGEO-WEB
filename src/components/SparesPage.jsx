@@ -93,7 +93,7 @@ export default function SparesPage() {
   }, []);
 
   return (
-    <div className="spares-container">
+    <div className="spares-container" id="spares">
       
       {/* Custom Cursor */}
       <div className="custom-cursor"></div>
