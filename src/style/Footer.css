@@ -25,14 +25,14 @@
   font-weight: bold;
   letter-spacing: 1px;
   color: rgb(186, 213, 47);
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .footer-col p {
   font-size: 14px;
   line-height: 1.6;
   color: #d6d4d4;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .footer-col ul {

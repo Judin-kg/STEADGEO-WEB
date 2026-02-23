@@ -96,7 +96,7 @@ export default function SparesPage() {
     <div className="spares-container" id="spares">
       
       {/* Custom Cursor */}
-      <div className="custom-cursor"></div>
+      {/* <div className="custom-cursor"></div> */}
 
       {/* Header */}
       <div className="spares-header">

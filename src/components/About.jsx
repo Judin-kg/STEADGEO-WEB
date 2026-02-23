@@ -11,7 +11,7 @@ const About = () => {
 
         {/* LEFT CONTENT */}
         <div className="about-text fade-up">
-          <h2>About <span className="title-span">STEADGEO</span></h2>
+          <h2>About Us</h2>
           <p className="highlight">
             Engineering Excellence • Heavy Machinery • Precision Work
           </p>

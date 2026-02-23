@@ -28,7 +28,7 @@
 }
 
 .about-text h2 {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-size: 42px;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -37,7 +37,7 @@
 
 .about-text .highlight {
   font-weight: 600;
-  color: #0072ff;
+  color: #01050b;
   margin-bottom: 25px;
   font-size: 15px;
 }
@@ -46,7 +46,7 @@
   line-height: 1.8;
   margin-bottom: 18px;
   color: #4a5a6a;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .about-text ul {
@@ -59,7 +59,7 @@
   margin-bottom: 10px;
   color: #1a1a1a;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 /* ================================

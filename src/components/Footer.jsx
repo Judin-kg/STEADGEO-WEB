@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Contact</h4>
           <p>📍 Kerala, India</p>
-          <p>📞 +91 98765 43210</p>
+          <p>📞 +91 8113007755</p>
           <p>
             ✉️ 
             <a href="mailto:info@steadgeo.com">
