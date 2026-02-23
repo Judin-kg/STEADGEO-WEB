@@ -1,103 +1,88 @@
-/* ================================
-   GLOBAL NAVBAR
-================================ */
+/* ==============================
+   BASE NAVBAR
+================================= */
 .navbar {
-  background: linear-gradient(90deg, #051f33, #084367);
-  padding: 14px 40px;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 80px; /* 🔥 FIXED HEIGHT */
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
   z-index: 1000;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background:white;
 }
 
+/* ==============================
+   SHRINK ON SCROLL
+================================= */
+.navbar.shrink {
+  height: 65px;   /* 🔥 REDUCED HEIGHT */
+  width: 75%;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.expand {
+  width: 92%;
+}
+
+/* ==============================
+   CONTAINER
+================================= */
 .navbar-container {
+  width: 100%;
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-/* ================================
+/* ==============================
    LOGO
-================================ */
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
+================================= */
 .logo img {
-  height: 72px;              /* ⬅️ Increased size (Desktop) */
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 60px;
+  transition: 0.4s ease;
 }
 
-/* Hover effect */
-.logo img:hover {
-  transform: scale(1.08);
-  filter: drop-shadow(0 6px 14px rgba(255, 211, 105, 0.8));
+.navbar.shrink .logo img {
+  height: 40px; /* 🔥 Logo shrinks */
 }
 
-/* Laptop */
-@media (max-width: 1200px) {
-  .logo img {
-    height: 64px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .logo img {
-    height: 56px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .logo img {
-    height: 48px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .logo img {
-    height: 60px;
-  }
-}
-
-
-
-/* ================================
-   NAV LINKS (DESKTOP)
-================================ */
+/* ==============================
+   NAV LINKS
+================================= */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 35px;
 }
 
 .nav-links li a {
-  font-family: "Courier New", Courier, monospace;
-  color: #ffffff;
   text-decoration: none;
+  font-weight: 600;
   font-size: 15px;
-  font-weight: 500;
+  color: #222;
   position: relative;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* Hover underline animation */
+/* Underline animation */
 .nav-links li a::after {
   content: "";
   position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #ffd369;
   left: 0;
-  bottom: -5px;
-  transition: width 0.3s ease;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 10px;
+  transition: 0.3s ease;
 }
 
 .nav-links li a:hover::after {
@@ -105,29 +90,28 @@
 }
 
 .nav-links li a:hover {
-  color: #ffd369;
+  color: #0072ff;
 }
 
-/* ================================
+/* ==============================
    CONTACT BUTTON
-================================ */
+================================= */
 .contact-btn {
-  background: #ffd369;
-  color: #0a2a43 !important;
-  padding: 8px 18px;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white !important;
+  transition: 0.3s ease;
 }
 
 .contact-btn:hover {
-  background: #ffb703;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
-/* ================================
-   HAMBURGER MENU
-================================ */
+/* ==============================
+   HAMBURGER
+================================= */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -135,85 +119,47 @@
 }
 
 .hamburger span {
-  background: #ffffff;
   height: 3px;
   width: 26px;
+  background: #222;
   margin: 4px 0;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Hamburger animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ================================
-   TABLET RESPONSIVE
-================================ */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 14px 24px;
-  }
-
-  .nav-links {
-    gap: 18px;
-  }
-
-  .nav-links li a {
-    font-size: 14px;
-  }
-}
-
-/* ================================
-   MOBILE RESPONSIVE
-================================ */
+/* ==============================
+   MOBILE
+================================= */
 @media (max-width: 768px) {
+
+  .navbar {
+    width: 95%;
+    height: 75px;
+  }
+
+  .navbar.shrink {
+    height: 60px;
+    width: 95%;
+  }
+
   .hamburger {
     display: flex;
   }
 
   .nav-links {
     position: absolute;
-    top: 72px;
+    top: 100%;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, #051f33, #084367);
     flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    padding: 30px 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 25px 0;
+    gap: 20px;
+    border-radius: 20px;
     display: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav-links.open {
     display: flex;
-    animation: slideDown 0.4s ease forwards;
-  }
-
-  .nav-links li a {
-    font-size: 16px;
-  }
-}
-
-/* ================================
-   MOBILE SLIDE ANIMATION
-================================ */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

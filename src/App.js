@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -7,6 +7,8 @@ import Services from './components/Services';
 import SparesPage from './components/SparesPage';
 import DepartmentPage from './components/DepartmentPage';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <SparesPage />
       <DepartmentPage />
       <Contact />
+      <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

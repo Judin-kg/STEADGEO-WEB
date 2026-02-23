@@ -1,114 +1,114 @@
+/* ===============================
+   SECTION
+================================ */
 .contact-section {
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  background: linear-gradient(135deg, #efeff0, #e6ecf3);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 80px 20px;
-  overflow: hidden;
+ font-family: "Poppins", sans-serif;
 }
 
-/* Dark overlay */
-.contact-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.65)
-  );
-  z-index: 1;
-}
-
-/* Main container */
-.contact-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
+/* ===============================
+   WRAPPER (SPLIT LAYOUT)
+================================ */
+.contact-wrapper {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  animation: floatUp 1.2s ease forwards;
+  max-width: 1000px; /* reduced size */
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
 }
 
-/* Left Info */
-.contact-info {
-  color: #fff;
-}
-
-.contact-info h2 {
-  font-size: 42px;
-  color: #f9f8f7;
-  margin-bottom: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif
-}
-
-.contact-info p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.info-box {
+/* ===============================
+   LEFT IMAGE
+================================ */
+.contact-image {
+  flex: 1;
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 18px;
-  font-size: 16px;
-}
-
-/* Glass Form */
-.contact-form {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  border-radius: 18px;
+  justify-content: center;
   padding: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.contact-form h3 {
-  color: #ffd369;
-  margin-bottom: 30px;
-  font-size: 28px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.contact-image img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Floating input */
+/* ===============================
+   RIGHT FORM
+================================ */
+.contact-form-container {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form-container h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.contact-form-container p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   FORM
+================================ */
+.contact-form {
+  width: 100%;
+}
+
 .input-group {
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 14px 12px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px;
   border-radius: 8px;
+  border: 1px solid #ddd;
   outline: none;
-  color: #fff;
-  font-size: 14px;
+  background: #f9f9f9;
+  transition: 0.3s ease;
 }
 
 .input-group textarea {
-  min-height: 110px;
+  min-height: 100px;
   resize: none;
 }
 
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #0072ff;
+  background: #ffffff;
+}
+
+/* Floating label */
 .input-group label {
   position: absolute;
-  left: 12px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
-  pointer-events: none;
+  color: #888;
   transition: 0.3s ease;
+  pointer-events: none;
 }
 
 .input-group input:focus + label,
@@ -116,75 +116,47 @@
 .input-group textarea:focus + label,
 .input-group textarea:valid + label {
   top: -8px;
-  background: #000;
-  padding: 0 6px;
   font-size: 11px;
-  color: #ffd369;
+  color: #0072ff;
 }
 
-/* Button */
+/* ===============================
+   BUTTON
+================================ */
 .contact-form button {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #ffd369, #ffb703);
   border: none;
   border-radius: 8px;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .contact-form button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(255, 211, 105, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.3);
 }
 
-/* Animations */
-@keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.fade-left {
-  animation: fadeLeft 1.2s ease forwards;
-}
-
-.fade-right {
-  animation: fadeRight 1.2s ease forwards;
-}
-
-@keyframes fadeLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-80px);
+  .contact-image {
+    padding: 30px;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
-@keyframes fadeRight {
-  from {
-    opacity: 0;
-    transform: translateX(80px);
+  .contact-image img {
+    max-width: 220px;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .contact-form-container {
+    padding: 35px 25px;
   }
 }

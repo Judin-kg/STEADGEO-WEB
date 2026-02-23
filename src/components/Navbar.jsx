@@ -28,15 +28,48 @@
 
 // export default Navbar;
 
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/Navbar.css";
 import logo from "../assets/logo1.png";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollUp, setScrollUp] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      // Detect scroll direction
+      if (currentScroll > lastScrollY) {
+        setScrollUp(false); // scrolling down
+      } else {
+        setScrollUp(true); // scrolling up
+      }
+
+      // Add glass effect after 80px
+      if (currentScroll > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      lastScrollY = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav
+      className={`navbar 
+      ${scrolled ? "navbar-glass" : ""} 
+      ${scrollUp ? "expand" : "shrink"}`}
+    >
       <div className="navbar-container">
         {/* Logo */}
         <div className="logo">
@@ -60,7 +93,6 @@ const Navbar = () => {
           <li><a href="#services" onClick={() => setMenuOpen(false)}>Services</a></li>
           <li><a href="#departments" onClick={() => setMenuOpen(false)}>Departments</a></li>
           <li><a href="#spares" onClick={() => setMenuOpen(false)}>Spares</a></li>
-          {/* <li><a href="#testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a></li> */}
           <li><a href="#contact" className="contact-btn" onClick={() => setMenuOpen(false)}>Contact</a></li>
         </ul>
       </div>
@@ -69,3 +101,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

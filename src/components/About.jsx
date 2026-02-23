@@ -10,13 +10,13 @@ const About = () => {
       <div className="about-container">
 
         {/* LEFT CONTENT */}
-        <div className="about-text">
-          <h2>About STEADGEO</h2>
+        <div className="about-text fade-up">
+          <h2>About <span className="title-span">STEADGEO</span></h2>
           <p className="highlight">
             Engineering Excellence • Heavy Machinery • Precision Work
           </p>
 
-          <p className="typing-text">
+          <p>
             <strong>STEADGEO Engineering & Projects</strong> is a professionally
             managed engineering company specializing in multi-branded truck
             services, heavy equipment rehabilitation, fabrication, and precision
@@ -44,7 +44,7 @@ const About = () => {
         </div>
 
         {/* RIGHT IMAGES */}
-        <div className="about-images">
+        <div className="about-images fade-up delay">
           <div className="img-card img-one">
             <img src={img1} alt="Workshop" />
           </div>
@@ -62,3 +62,4 @@ const About = () => {
 };
 
 export default About;
+
