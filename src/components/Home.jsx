@@ -71,9 +71,9 @@
 
 import React, { useEffect, useState } from "react";
 import "../style/Home.css";
-import slide1 from "../assets/truckimage.jpg";
-import slide2 from "../assets/trucktool.jpg";
-import slide3 from "../assets/truckservice.jpg";
+import slide1 from "../assets/work.png";
+import slide2 from "../assets/truck.png";
+import slide3 from "../assets/workers.jpg";
 
 const slides = [slide1, slide2, slide3];
 

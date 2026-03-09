@@ -9,6 +9,7 @@ import DepartmentPage from './components/DepartmentPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import Frames from './components/Frames';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Services />
       <SparesPage />
+      <Frames />
       <DepartmentPage />
       <Contact />
       <Footer />
