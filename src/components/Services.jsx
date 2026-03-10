@@ -121,7 +121,81 @@
 // export default Services;
 
 
-import React from "react";
+// import React from "react";
+// import "../style/Services.css";
+// import s1 from "../assets/slide1.png";
+// import s2 from "../assets/slide2.png";
+// import s3 from "../assets/slide3.png";
+// import s4 from "../assets/slide4.png";
+
+// const services = [
+//   {
+//     title: "MULTI BRANDED TRUCK SERVICES",
+//     desc: "Complete servicing and maintenance for all major truck brands ensuring reliability and performance.",
+//     image: s1,
+//   },
+//   {
+//     title: "LATHE MACHINERY JOBS & MACHINE FABRICATION",
+//     desc: "Precision lathe machining, custom fabrication and heavy engineering works.",
+//     image: s2,
+//   },
+//   {
+//     title: "AUTO DENTING, WELDING & BODY PAINTING",
+//     desc: "Professional denting, welding and premium body painting services.",
+//     image: s3,
+//   },
+//   {
+//     title: "RE-HAB WORK OF EXCAVATORS & CONCRETE PUMPS",
+//     desc: "Complete rehabilitation and overhaul of excavators, transit mixers and concrete pumps.",
+//     image: s4,
+//   },
+//   {
+//     title: "LINE BORING & ENGINE RE-BUILDING",
+//     desc: "High-accuracy line boring, engine rebuilding, drum & disc boring with facings.",
+//     image: s1,
+//   },
+//   {
+//     title: "200 MT HYDRAULIC PRESS & HOSE CRIMPING",
+//     desc: "Heavy-duty hydraulic press works and hydraulic hose crimping services.",
+//     image: s2,
+//   },
+//   {
+//     title: "SPARE PARTS & LUBRICANTS",
+//     desc: "Spare parts for MAN, EICHER, TATA, MAHINDRA with AdBlue and industrial lubricants.",
+//     image: s3,
+//   },
+// ];
+
+// export default function Services() {
+//   return (
+//     <div className="services-page" id="services">
+//       <h1 className="services-heading">Our Services</h1>
+//          {/* <p className="highlight">
+//             Engineering Excellence • Heavy Machinery • Precision Work
+//           </p> */}
+//       <div className="carousel-wrapper">
+//         <div className="vertical-carousel">
+//           {[...services, ...services].map((service, index) => (
+//             <div className="service-card" key={index}>
+//               <div className="service-image">
+//                 <img src={service.image} alt={service.title} />
+//               </div>
+
+//               <div className="service-content">
+//                 <h2>{service.title}</h2>
+//                 <p>{service.desc}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+import React, { useRef } from "react";
 import "../style/Services.css";
 import s1 from "../assets/slide1.png";
 import s2 from "../assets/slide2.png";
@@ -167,15 +241,34 @@ const services = [
 ];
 
 export default function Services() {
+  const scrollRef = useRef(null);
+
+  const scrollUp = () => {
+    scrollRef.current.scrollBy({
+      top: -250,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollDown = () => {
+    scrollRef.current.scrollBy({
+      top: 250,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="services-page" id="services">
       <h1 className="services-heading">Our Services</h1>
-         {/* <p className="highlight">
-            Engineering Excellence • Heavy Machinery • Precision Work
-          </p> */}
+
       <div className="carousel-wrapper">
-        <div className="vertical-carousel">
-          {[...services, ...services].map((service, index) => (
+
+        <button className="scroll-btn up" onClick={scrollUp}>
+          ▲
+        </button>
+
+        <div className="vertical-carousel" ref={scrollRef}>
+          {services.map((service, index) => (
             <div className="service-card" key={index}>
               <div className="service-image">
                 <img src={service.image} alt={service.title} />
@@ -188,6 +281,11 @@ export default function Services() {
             </div>
           ))}
         </div>
+
+        <button className="scroll-btn down" onClick={scrollDown}>
+          ▼
+        </button>
+
       </div>
     </div>
   );

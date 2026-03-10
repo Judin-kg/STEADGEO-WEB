@@ -126,7 +126,8 @@ const Home = () => {
           Multi Branded Truck Services • Heavy Machinery Repairs • Fabrication
         </p>
 
-        <button>Explore Services</button>
+        <button><a href="#services" >Explore Services</a></button>
+        
       </div>
     </section>
   );
