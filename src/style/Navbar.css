@@ -21,7 +21,7 @@
 ================================= */
 .navbar.shrink {
   height: 65px;   /* 🔥 REDUCED HEIGHT */
-  width: 75%;
+  width: 85%;
   backdrop-filter: blur(18px);
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
@@ -37,6 +37,7 @@
 .navbar-container {
   width: 100%;
   padding: 0 50px;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +47,7 @@
    LOGO
 ================================= */
 .logo img {
+  
   height: 150px;
   text-align: center;
   transition: 0.4s ease;
