@@ -197,10 +197,13 @@
 
 import React, { useRef } from "react";
 import "../style/Services.css";
-import s1 from "../assets/slide1.png";
-import s2 from "../assets/slide2.png";
-import s3 from "../assets/slide3.png";
-import s4 from "../assets/slide4.png";
+import s1 from "../assets/multipletruckservice.png";
+import s2 from "../assets/lathmachenary.png";
+import s3 from "../assets/velding.png";
+import s4 from "../assets/rehab.jpeg";
+import s5 from "../assets/200mt.png";
+import s6 from "../assets/spareparts.png";
+import s7 from "../assets/spareparts.png";
 
 const services = [
   {
@@ -226,19 +229,21 @@ const services = [
   {
     title: "LINE BORING & ENGINE RE-BUILDING",
     desc: "High-accuracy line boring, engine rebuilding, drum & disc boring with facings.",
-    image: s1,
+    image: s5,
   },
   {
     title: "200 MT HYDRAULIC PRESS & HOSE CRIMPING",
     desc: "Heavy-duty hydraulic press works and hydraulic hose crimping services.",
-    image: s2,
+    image: s6,
   },
   {
     title: "SPARE PARTS & LUBRICANTS",
     desc: "Spare parts for MAN, EICHER, TATA, MAHINDRA with AdBlue and industrial lubricants.",
-    image: s3,
+    image: s7,
   },
 ];
+
+
 
 export default function Services() {
   const scrollRef = useRef(null);

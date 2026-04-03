@@ -1,8 +1,8 @@
 import React from "react";
 import "../style/About.css";
-import img1 from "../assets/slide1.png";
-import img2 from "../assets/slide2.png";
-import img3 from "../assets/slide3.png";
+import img1 from "../assets/about.png";
+import img2 from "../assets/about1.png";
+import img3 from "../assets/about2.png";
 
 const About = () => {
   return (

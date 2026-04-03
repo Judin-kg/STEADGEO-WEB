@@ -71,9 +71,10 @@
 
 import React, { useEffect, useState } from "react";
 import "../style/Home.css";
-import slide1 from "../assets/work.png";
-import slide2 from "../assets/truck.png";
-import slide3 from "../assets/workers.jpg";
+import slide1 from "../assets/home2.png";
+import slide2 from "../assets/home1.png";
+import slide3 from "../assets/slide1.png";
+
 
 const slides = [slide1, slide2, slide3];
 
@@ -130,6 +131,7 @@ const Home = () => {
         
       </div>
     </section>
+    
   );
 };
 
